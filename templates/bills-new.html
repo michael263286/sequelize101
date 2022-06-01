@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Add a new Bill</h1>
+  <form action="/bills" method ="post">
+    <p>
+      <label for="company">Company Name</label>
+      <input type="text" id="company" name="company" required>
+    </p>
+    <fieldset>
+      <legend>Already Paid?</legend>
+      <p>
+        <input type="radio" id="paid-yes" name="paid" value="true">
+        <label for="paid-yes">Yes</label>
+      </p>
+      <p>
+        <input type="radio" id="paid-no" name="paid" value="false">
+        <label for="paid-no">No</label>
+      </p>
+    </fieldset>
+    <p>
+      <label for="amount">Bill Amount</label>
+      <input type="number" name="amount" id="amount">
+    </p>
+    <p>
+      <label for="dueBy">Bill Due Before</label>
+      <input type="datetime-local" name="dueBy" id="dueBy">
+    </p>
+    <button type="submit">Add</button>
+  </form>
+</body>
+</html>

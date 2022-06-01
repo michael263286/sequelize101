@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>${customer.username}'s Dashboard</h1>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Company</th>
+        <th>Amount</th>
+        <th>Paid</th>
+        <th>Due</th>
+      </tr>
+    </thead>
+    <tbody>
+      ${customer.Bills.map(bill => {
+        return `<tr>
+          <td>${bill.company}</td>
+          <td>$${(bill.amount / 100).toFixed(2)}</td>
+          <td>${bill.paid ? 'Yep' : 'Nope'}</td>
+          <td>${bill.dueBy.getMonth() + 1}/${bill.dueBy.getDate()}</td>
+        </tr>`
+      }).join('')}
+    </tbody>
+  </table>
+
+</body>
+</html>
